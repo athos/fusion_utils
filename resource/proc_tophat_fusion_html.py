@@ -65,7 +65,7 @@ with open(input_file, 'r') as hin:
         if read_count == 8:
             temp_pair = line
             if print_on == 1:
-                print '\t'.join([temp_chr1, temp_pos1, temp_dir1, temp_chr2, temp_pos2, temp_dir2, temp_read, temp_pair, temp_gene1, temp_gene2])
+                print('\t'.join([temp_chr1, temp_pos1, temp_dir1, temp_chr2, temp_pos2, temp_dir2, temp_read, temp_pair, temp_gene1, temp_gene2]))
                 print_on = 0
 
 """        

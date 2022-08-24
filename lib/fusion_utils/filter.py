@@ -7,7 +7,7 @@ def filter_star_fusion(input_file, output_file, thres):
     for line in hIN:
         F = line.rstrip('\n').split('\t')
         if F[0] == "#fusion_name":
-            print >> hOUT, '\t'.join(F)
+            print('\t'.join(F), file=hOUT)
             continue 
 
         if int(F[1]) < int(thres): continue
@@ -17,7 +17,7 @@ def filter_star_fusion(input_file, output_file, thres):
         if F[7].startswith("MT"): continue
         if F[7].startswith("GL0"): continue
 
-        print >> hOUT, '\t'.join(F)
+        print('\t'.join(F), file=hOUT)
 
     hIN.close()
     hOUT.close()
@@ -44,7 +44,7 @@ def filter_genomon_fusion(input_file, output_file, thres):
 
         if int(F[20]) < thres: continue
 
-        print >> hOUT, '\t'.join(F)
+        print('\t'.join(F), file=hOUT)
 
     hIN.close()
     hOUT.close()
@@ -70,7 +70,7 @@ def filter_fusionfusion(input_file, output_file, thres):
 
         if int(F[7]) < thres: continue
 
-        print >> hOUT, '\t'.join(F)
+        print('\t'.join(F), file=hOUT)
 
     hIN.close()
     hOUT.close()

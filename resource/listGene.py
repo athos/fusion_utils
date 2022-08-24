@@ -25,11 +25,11 @@ with gzip.open(inputFile, 'r') as hin:
 
         key = chr + '\t' + gene_start + '\t' + gene_end
         if gene_type == "ref": 
-            print key + '\t' + symbol + '\t' + str(size) + '\t' + strand
+            print(key + '\t' + symbol + '\t' + str(size) + '\t' + strand)
         elif gene_type == "ens":
-            print key + '\t' + gene_id + '\t' + str(size) + '\t' + strand
+            print(key + '\t' + gene_id + '\t' + str(size) + '\t' + strand)
         else:
-            print >> sys.stderr, "The 2nd argument should be ref or ens"
+            print("The 2nd argument should be ref or ens", file=sys.stderr)
             sys.exit(1)
 
 

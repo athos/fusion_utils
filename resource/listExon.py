@@ -30,15 +30,13 @@ with gzip.open(inputFile, 'r') as hin:
         elif gene_type == "ens":
             gene_print_name = gene_id
         else:
-            print >> sys.stderr, "The 2nd argument should be ref or ens"
+            print("The 2nd argument should be ref or ens", file=sys.stderr)
             sys.exit(1)
  
         for i in range(0, len(exon_starts) - 1):
             key = chr + '\t' + exon_starts[i] + '\t' + exon_ends[i]
             if strand == "+":
-                print key + '\t' + gene_print_name + '\t' + str(size) + '\t' + "+"
+                print(key + '\t' + gene_print_name + '\t' + str(size) + '\t' + "+")
             else:
-                print key + '\t' + gene_print_name + '\t' + str(size) + '\t' + "-"
-
-
+                print(key + '\t' + gene_print_name + '\t' + str(size) + '\t' + "-")
 

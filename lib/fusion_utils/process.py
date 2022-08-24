@@ -39,7 +39,7 @@ def convert_to_bedpe(input_file, output_file, margin_major, margin_minor, method
             start2 = str(int(start2) - int(margin_major))
             end2 = str(int(end2) + int(margin_minor))
 
-        print >> hOUT, '\t'.join([chr1, start1, end1, chr2, start2, end2, ID, str(read_num), dir1, dir2])
+        print('\t'.join([chr1, start1, end1, chr2, start2, end2, ID, str(read_num), dir1, dir2]), file=hOUT)
 
     hIN.close()
     hOUT.close()
